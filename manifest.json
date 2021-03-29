@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "$name",
+  "description": "$description",
+  "version": "$version",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "downloads"
+  ],
+  "omnibox": {
+    "keyword": "jp"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://jisho.org/*"
+      ],
+      "js": [
+        "jisho.js"
+      ]
+    }
+  ]
+}
