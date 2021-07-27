@@ -1,5 +1,6 @@
 import chrome.Chrome
 import chrome.download.DownloadOptions
+import chrome.download.FilenameConflictAction
 import chrome.download.download
 import chrome.runtime.sendMessage
 import kotlinx.browser.*
@@ -27,9 +28,11 @@ fun main() {
         val downloadAudioButton = document.create.a(classes = "concept_light-status_link") {
             text("Download Audio")
             onClickFunction = {
+                println("Clicking!")
                 GlobalScope.launch {
                     val url = (audioContainer.firstElementChild as HTMLSourceElement).src
-                    val filename = audioContainer.id + ".mp3"
+                    val filename = audioContainer.id.split(":").first() + ".mp3"
+
                     Chrome.runtime.sendMessage(message = json(
                         "type" to "JishoDownload",
                         "url" to url,

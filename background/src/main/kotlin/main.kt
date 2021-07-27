@@ -24,17 +24,19 @@ fun main() {
             println(message.filename.unsafeCast<String>())
             println(message.url.unsafeCast<String>())
             // crashes all of chrome for some reason
-//            GlobalScope.launch {
-//                val downloadId = Chrome.downloads.download(DownloadOptions(
-//                    conflictAction = FilenameConflictAction.uniquify,
-//                    filename = message.filename.unsafeCast<String>(),
-//                    url = message.url.unsafeCast<String>())
-//                )
-//
-//                if (downloadId == undefined) {
-//                    println(Chrome.runtime.lastError)
-//                }
-//            }
+            GlobalScope.launch {
+                val downloadId = Chrome.downloads.download(DownloadOptions(
+                    conflictAction = FilenameConflictAction.uniquify,
+                    filename = message.filename.unsafeCast<String>(),
+                    url = message.url.unsafeCast<String>())
+                )
+
+                println("Yolo!")
+
+                if (downloadId == undefined) {
+                    println(Chrome.runtime.lastError)
+                }
+            }
         }
     }
 }

@@ -10,16 +10,11 @@ import org.gradle.api.internal.catalog.TypeSafeProjectDependencyFactory;
 import javax.inject.Inject;
 
 @NonNullApi
-public class JapaneseLanguageSearchProjectDependency extends DelegatingProjectDependency {
+public class ChromeExtensionKotlinApiProjectDependency extends DelegatingProjectDependency {
 
     @Inject
-    public JapaneseLanguageSearchProjectDependency(TypeSafeProjectDependencyFactory factory, ProjectDependencyInternal delegate) {
+    public ChromeExtensionKotlinApiProjectDependency(TypeSafeProjectDependencyFactory factory, ProjectDependencyInternal delegate) {
         super(factory, delegate);
     }
-
-    /**
-     * Creates a project dependency on the project at path ":background"
-     */
-    public BackgroundProjectDependency getBackground() { return new BackgroundProjectDependency(getFactory(), create(":background")); }
 
 }

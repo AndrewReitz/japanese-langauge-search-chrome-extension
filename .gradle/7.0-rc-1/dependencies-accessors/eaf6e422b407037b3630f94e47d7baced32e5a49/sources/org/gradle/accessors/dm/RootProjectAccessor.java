@@ -21,6 +21,6 @@ public class RootProjectAccessor extends TypeSafeProjectDependencyFactory {
     /**
      * Creates a project dependency on the project at path ":"
      */
-    public JapaneseLanguageSearchProjectDependency getJapaneseLanguageSearch() { return new JapaneseLanguageSearchProjectDependency(getFactory(), create(":")); }
+    public ChromeExtensionKotlinApiProjectDependency getChromeExtensionKotlinApi() { return new ChromeExtensionKotlinApiProjectDependency(getFactory(), create(":")); }
 
 }
