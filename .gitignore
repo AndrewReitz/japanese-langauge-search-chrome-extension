@@ -246,3 +246,5 @@ temp/
 build
 
 local.settings.gradle.kts
+
+.gradle
