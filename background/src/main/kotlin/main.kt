@@ -5,7 +5,6 @@ import chrome.download.download
 import chrome.tabs.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlin.math.max
 
 fun main() {
     Chrome.omnibox.onInputEntered.addListener { text, _ ->
@@ -30,8 +29,6 @@ fun main() {
                     filename = message.filename.unsafeCast<String>(),
                     url = message.url.unsafeCast<String>())
                 )
-
-                println("Yolo!")
 
                 if (downloadId == undefined) {
                     println(Chrome.runtime.lastError)

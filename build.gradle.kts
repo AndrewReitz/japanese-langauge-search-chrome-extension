@@ -11,7 +11,7 @@ allprojects {
 
 plugins {
     distribution
-    kotlin("js") version "1.4.31" apply false
+    kotlin("js") version libs.versions.kotlin.get() apply false
 }
 
 val content: Configuration by configurations.creating
